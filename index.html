@@ -1481,6 +1481,26 @@
             document.body.removeChild(link);
         }
 
+        // Add this to your script section
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Create mailto link
+            const mailtoLink = `mailto:peleiwnl@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            
+            // Open default email client
+            window.location.href = mailtoLink;
+            
+            // Optional: Show success message
+            alert('Opening your email client...');
+        }
+
         // Active navigation highlighting
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
