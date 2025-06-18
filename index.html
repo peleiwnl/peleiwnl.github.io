@@ -797,7 +797,6 @@
             text-align: left;
         }
         
-        /* Timeline dots - centered on the line */
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -806,19 +805,19 @@
             background: #64ffda;
             border-radius: 50%;
             top: 50%;
+            left: 50%;
             transform: translateY(-50%);
             box-shadow: 0 0 0 4px #1a1a1a, 0 0 15px rgba(100, 255, 218, 0.5);
             z-index: 10;
         }
         
-        /* Dot positioning for left items */
         .timeline-item:nth-child(odd)::before {
-            right: -50px;
+            margin-left: calc(50% + 2.5% + 1.5px); 
         }
         
-        /* Dot positioning for right items */
+
         .timeline-item:nth-child(even)::before {
-            left: -50px;
+            margin-left: calc(-55% - 1.5px);
         }
         
         .timeline-date {
