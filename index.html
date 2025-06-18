@@ -767,6 +767,20 @@
             background: linear-gradient(to bottom, #64ffda, #00bcd4);
             top: 0;
         }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #64ffda;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 0 4px #1a1a1a, 0 0 15px rgba(100, 255, 218, 0.5);
+            z-index: 10;
+        }
         
         .timeline-item {
             background: #333333;
@@ -798,17 +812,7 @@
         }
         
         .timeline-item::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #64ffda;
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 0 4px #1a1a1a, 0 0 15px rgba(100, 255, 218, 0.5);
-            z-index: 10;
+            display: none;
         }
         
         .timeline-date {
@@ -1328,6 +1332,29 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const timeline = document.querySelector('.timeline');
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            timelineItems.forEach((item, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'timeline-dot';
+                dot.style.cssText = `
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    background: #64ffda;
+                    border-radius: 50%;
+                    left: 50%;
+                    top: ${item.offsetTop + item.offsetHeight/2}px;
+                    transform: translateX(-50%);
+                    box-shadow: 0 0 0 4px #1a1a1a, 0 0 15px rgba(100, 255, 218, 0.5);
+                    z-index: 10;
+                `;
+                timeline.appendChild(dot);
             });
         });
 
