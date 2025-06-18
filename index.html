@@ -77,8 +77,13 @@
             transition: width 0.3s ease;
         }
         
-        .nav-menu a:hover:after {
+        .nav-menu a:hover:after,
+        .nav-menu a.active:after {
             width: 100%;
+        }
+        
+        .nav-menu a.active {
+            color: #64ffda;
         }
         
         /* Hamburger Menu */
@@ -965,29 +970,41 @@
             <h2>Education</h2>
             <div class="education-timeline">
                 <div class="education-items">
+
                     <div class="education-item">
-                        <div class="education-dates">2020 - 2024</div>
-                        <div class="education-degree">BSc Software Engineering</div>
-                        <div class="education-institution">Swansea University</div>
-                        <div class="education-location">Swansea, United Kingdom</div>
-                        <div class="education-description">First-Class Honours degree with scholarship. Relevant coursework: Data Structures, Algorithms, Software Engineering, Database Systems, Web Development, AI & Machine Learning</div>
+                        <div class="education-dates">2016 - 2018</div>
+                        <div class="education-degree">GCSEs</div>
+                        <div class="education-institution">Exeter School</div>
+                        <div class="education-location">Exeter, United Kingdom</div>
+                        <div class="education-description">Strong foundation in core subjects comprising of 6 A's and 3 B's with particular excellence in and Computer Science, setting the path for further education</div>
                     </div>
                     
                     <div class="education-item">
                         <div class="education-dates">2018 - 2020</div>
-                        <div class="education-degree">A Levels</div>
-                        <div class="education-institution">Local Sixth Form College</div>
-                        <div class="education-location">Swansea, United Kingdom</div>
-                        <div class="education-description">Graduated with honors, focusing on Mathematics, Computer Science, and Physics. Achieved excellent grades preparing for university study</div>
+                        <div class="education-degree">Diploma and Extended Diploma</div>
+                        <div class="education-institution">Truro & Penwith College</div>
+                        <div class="education-location">Truro, United Kingdom</div>
+                        <div class="education-description">Underwent a Diploma and Extended Diploma in IT & Computing, receiving a D*D*D* grade, granting a scholarship to Swansea University.</div>
                     </div>
                     
-                    <div class="education-item">
-                        <div class="education-dates">2016 - 2018</div>
-                        <div class="education-degree">GCSEs</div>
-                        <div class="education-institution">Local High School</div>
+                     <div class="education-item">
+                        <div class="education-dates">2022 - 2025</div>
+                        <div class="education-degree">BSc Software Engineering</div>
+                        <div class="education-institution">Swansea University</div>
                         <div class="education-location">Swansea, United Kingdom</div>
-                        <div class="education-description">Strong foundation in core subjects with particular excellence in Mathematics and Computer Science, setting the path for further education</div>
+                        <div class="education-description">First-Class Honours degree with scholarship. Relevant coursework: Data Structures, Algorithms, Software Engineering, Database Systems, Web Development, AI & Machine Learning, Security</div>
                     </div>
+
+                    <div class="education-item">
+                        <div class="education-dates">2025 - Future Endevours</div>
+                        <div class="education-degree">Master's Degree and Employment</div>
+                        <div class="education-institution">TBD</div>
+                        <div class="education-location">TBD</div>
+                        <div class="education-description">Now actively seeking employment or a Master's degree to further my education whilst working on individual projects</div>
+                    </div>
+
+
+             
                 </div>
             </div>
         </section>
@@ -1114,46 +1131,24 @@
             </div>
         </section>
 
-        <!-- Education Section -->
-        <section id="education" class="section">
-            <h2>Education</h2>
-            <div class="education-timeline">
-                <div class="education-items">
-
-                    <div class="education-item">
-                        <div class="education-dates">2016 - 2018</div>
-                        <div class="education-degree">GCSEs</div>
-                        <div class="education-institution">Exeter School</div>
-                        <div class="education-location">Exeter, United Kingdom</div>
-                        <div class="education-description">Strong foundation in core subjects comprising of 6 A's and 3 B's with particular excellence in and Computer Science, setting the path for further education</div>
-                    </div>
-                    
-                    <div class="education-item">
-                        <div class="education-dates">2018 - 2020</div>
-                        <div class="education-degree">Diploma and Extended Diploma</div>
-                        <div class="education-institution">Truro & Penwith College</div>
-                        <div class="education-location">Truro, United Kingdom</div>
-                        <div class="education-description">Underwent a Diploma and Extended Diploma in IT & Computing, receiving a D*D*D* grade, granting a scholarship to Swansea University.</div>
-                    </div>
-                    
-                     <div class="education-item">
-                        <div class="education-dates">2022 - 2025</div>
-                        <div class="education-degree">BSc Software Engineering</div>
-                        <div class="education-institution">Swansea University</div>
-                        <div class="education-location">Swansea, United Kingdom</div>
-                        <div class="education-description">First-Class Honours degree with scholarship. Relevant coursework: Data Structures, Algorithms, Software Engineering, Database Systems, Web Development, AI & Machine Learning, Security</div>
-                    </div>
-
-                    <div class="education-item">
-                        <div class="education-dates">2025 - Future Endevours</div>
-                        <div class="education-degree">Master's Degree and Employment</div>
-                        <div class="education-institution">TBD</div>
-                        <div class="education-location">TBD</div>
-                        <div class="education-description">Now actively seeking employment or a Master's degree to further my education whilst working on individual projects</div>
-                    </div>
-
-
-             
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Software Developer Intern</h3>
+                    <p><strong>Tech Company Inc.</strong> | June 2023 - August 2023</p>
+                    <p>Developed and maintained web applications using React and Node.js. Collaborated with senior developers on feature implementation and bug fixes.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Freelance Web Developer</h3>
+                    <p><strong>Self-Employed</strong> | January 2022 - Present</p>
+                    <p>Created custom websites and web applications for various clients. Specialized in responsive design and modern JavaScript frameworks.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Teaching Assistant</h3>
+                    <p><strong>University Name</strong> | September 2022 - December 2022</p>
+                    <p>Assisted professor in teaching Introduction to Programming course. Conducted lab sessions and helped students with coding assignments.</p>
                 </div>
             </div>
         </section>
