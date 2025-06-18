@@ -806,18 +806,9 @@
             border-radius: 50%;
             top: 50%;
             left: 50%;
-            transform: translateY(-50%);
+            transform: translate(-50%, -50%);
             box-shadow: 0 0 0 4px #1a1a1a, 0 0 15px rgba(100, 255, 218, 0.5);
             z-index: 10;
-        }
-        
-        .timeline-item:nth-child(odd)::before {
-            margin-left: calc(50% + 2.5% + 1.5px); 
-        }
-        
-
-        .timeline-item:nth-child(even)::before {
-            margin-left: calc(-55% - 1.5px);
         }
         
         .timeline-date {
@@ -861,7 +852,7 @@
             
             .timeline-item::before {
                 left: -70px !important;
-                right: auto !important;
+                transform: translateY(-50%);
             }
         }
         
