@@ -956,14 +956,15 @@
             }
 
 
-            /* Certifications Horizontal Scroll */
+          /* Certifications Section */
             .certifications-container {
                 display: flex;
                 gap: 2rem;
                 overflow-x: auto;
-                padding: 1rem 0;
+                padding: 2rem 0;
                 margin-top: 2rem;
                 scroll-behavior: smooth;
+                justify-content: center;
             }
             
             .certifications-container::-webkit-scrollbar {
@@ -980,11 +981,7 @@
                 border-radius: 4px;
             }
             
-            .certifications-container::-webkit-scrollbar-thumb:hover {
-                background: #4fd3b8;
-            }
-            
-            .certification-card {
+            .certification-button {
                 background: #333333;
                 padding: 2rem;
                 border-radius: 15px;
@@ -992,62 +989,36 @@
                 border: 1px solid rgba(255, 255, 255, 0.1);
                 transition: all 0.3s ease;
                 cursor: pointer;
-                min-width: 300px;
-                max-width: 350px;
+                min-width: 200px;
+                max-width: 250px;
                 display: flex;
                 align-items: center;
-                gap: 1.5rem;
+                justify-content: center;
                 flex-shrink: 0;
             }
             
-            .certification-card:hover {
+            .certification-button:hover {
                 transform: translateY(-5px);
                 box-shadow: 0 8px 25px rgba(100, 255, 218, 0.1);
                 border-color: #64ffda;
             }
             
-            .certification-icon {
-                width: 80px;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-                transition: all 0.3s ease;
-            }
-            
-            .certification-icon img {
-                max-width: 100%;
-                max-height: 100%;
+            .certification-button img {
+                width: 120px;
+                height: auto;
+                max-height: 60px;
                 object-fit: contain;
             }
             
-            .certification-card:hover .certification-icon {
-                transform: scale(1.05);
-            }
-            
-            .certification-info h3 {
-                color: #ffffff;
-                margin-bottom: 0.5rem;
-                font-size: 1.1rem;
-                font-weight: 600;
-            }
-            
-            .certification-info p {
-                color: #64ffda;
-                font-size: 0.9rem;
-                font-weight: 500;
-            }
-            
-            /* Mobile responsiveness */
             @media (max-width: 768px) {
-                .certification-card {
-                    min-width: 280px;
-                    max-width: 320px;
+                .certification-button {
+                    min-width: 180px;
+                    max-width: 200px;
                 }
                 
-                .certifications-container {
-                    gap: 1.5rem;
+                .certification-button img {
+                    width: 100px;
+                    max-height: 50px;
                 }
             }
             
@@ -1334,27 +1305,16 @@
         <section id="certifications" class="section">
             <h2>Certifications</h2>
             <div class="certifications-container">
-                <div class="certification-card" onclick="window.open('https://www.coursera.org/learn/foundations-of-cybersecurity', '_blank')">
-                    <div class="certification-icon">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjMzIiB2aWV3Qm94PSIwIDAgMTAwIDMzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTYuNTEgMTYuNDFjMC0xLjU0LS4xNC0zLjAyLS40MS00LjQyaC0xMy40djguMzZoNy42M2MtLjMzIDEuNzktMS4zNCAzLjMxLTIuODQgNC4zM3Y2aDkuMzRjMi42OS0yLjQzIDQuMjgtNi4wMyA0LjI4LTEwLjI3eiIgZmlsbD0iIzQyODVGNCIvPgo8cGF0aCBkPSJNMy42IDI2LjQ2YzMuODUgMCAxMC4wNy0xLjI3IDEzLjQzLTMuNDdsLTkuMzQtNi4wMmMtMS4yNiAuODUtMi44NyAxLjM1LTQuODEgMS4zNS0zLjcgMC02Ljg2LTIuNDgtNy45LTUuODJIMy4xNXY2LjIzYzMuNSA2Ljg4IDEwLjcgMTE0IDEzLjQ1IDExLjRoLjA2eiIgZmlsbD0iIzM0QTg1MyIvPgo8cGF0aCBkPSJNNy41IDEzYy0uMjgtLjg1LS40My0xLjc1LS40My0yLjY3IDAtLjkyLjE1LTEuODIuNDMtMi42N1Y3LjY2aC02LjM1QzIuNSA5LjUxIDEuOSAxMS42OSAxLjkgMTNzLjYgMy40OSAxLjI1IDQuODZsNi4zNS00Ljg2eiIgZmlsbD0iI0ZCQkMwNSIvPgo8cGF0aCBkPSJNMy42IDcuMzNjMi4wOSAwIDMuOTUuNzIgNS40MiAyLjEzbDEwLjI2LTEwLjI2QzE3LjM1LTIuMzkgMTMuMTktMy42IDcuMy0zLjYgMi42LTMuNi0xLjcgMy42IDMuNjcgNy4zMyIgZmlsbD0iI0VBNDMzNSIvPgo8dGV4dCB4PSIzMCIgeT0iMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzRBNEE0QSI+R29vZ2xlPC90ZXh0Pgo8L3N2Zz4=" alt="Google" />
-                    </div>
-                    <div class="certification-info">
-                        <h3>Foundations of Cybersecurity</h3>
-                        <p>Google via Coursera</p>
-                    </div>
+                <div class="certification-button" onclick="window.open('https://www.coursera.org/learn/foundations-of-cybersecurity', '_blank')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" />
                 </div>
                 
-                <div class="certification-card" onclick="window.open('https://www.coursera.org/learn/introduction-git-github', '_blank')">
-                    <div class="certification-icon">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjMwIiB2aWV3Qm94PSIwIDAgMTAwIDMwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8Y2lyY2xlIGN4PSIxNSIgY3k9IjE1IiByPSIxNCIgZmlsbD0iIzE4MTcxNyIvPgo8cGF0aCBkPSJNMTUgNi41QzEwLjE5IDYuNSA2LjMgMTAuMzkgNi4zIDE1LjJjMCAzLjg1IDIuNSA3LjEyIDUuOTYgOC4yNy40NC4wOC41OS0uMTkuNTktLjQyIDAtLjIxLS4wMS0uNzctLjAxLTEuNTEtMi40Mi41My0yLjkzLTEuMTctMi45My0xLjE3LS40LTEuMDEtLjk3LTEuMjgtLjk3LTEuMjgtLjc5LS41NC4wNi0uNTMuMDYtLjUzLjg3LjA2IDEuMzMuODkgMS4zMy44OS43OC0xLjMzIDItLjk1IDIuNTMtLjczLjA4LS41Ni4zMS0uOTUuNTYtMS4xNy0xLjkzLS4yMi0zLjk2LS45Ni0zLjk2LTQuMjggMC0uOTUuMzQtMS43Mi44OS0yLjMzLS4wOS0uMjItLjM5LTEuMTEuMDgtMi4zMSAwIDAgLjczLS4yMyAyLjM4Ljg5LjY5LS4xOSAxLjQzLS4yOSAyLjE3LS4yOS43NCAwIDEuNDguMSAyLjE3LjI5IDEuNjUtMS4xMiAyLjM4LS44OSAyLjM4LS44OS40NyAxLjIuMTcgMi4wOS4wOCAyLjMxLjU1LjYxLjg5IDEuMzguODkgMi4zMyAwIDMuMzMtMi4wMyA0LjA1LTMuOTcgNC4yNy4zMS4yNy41OSAxLjE3LjU5IDEuNyAwIDEuMjMtLjAxIDIuMjItLjAxIDIuNTIgMCAuMjMuMTQuNTEuNTkuNDJjMy40Ny0xLjE2IDUuOTctNC40MiA1Ljk3LTguMjcgMC00LjgxLTMuODktOC43LTguNy04LjciIGZpbGw9IndoaXRlIi8+Cjx0ZXh0IHg9IjM1IiB5PSIxOSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmaWxsPSIjMTgxNzE3Ij5HaXRIdWI8L3RleHQ+Cjwvc3ZnPg==" alt="GitHub" />
-                    </div>
-                    <div class="certification-info">
-                        <h3>Introduction to Git and GitHub</h3>
-                        <p>Google via Coursera</p>
-                    </div>
+                <div class="certification-button" onclick="window.open('https://www.coursera.org/learn/introduction-git-github', '_blank')">
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" alt="GitHub" />
                 </div>
             </div>
         </section>
+
 
         <!-- Contact Section -->
         <section id="contact" class="section">
