@@ -539,7 +539,7 @@
         /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -549,7 +549,6 @@
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s ease;
         }
@@ -562,6 +561,57 @@
         .skill-category h3 {
             color: #64ffda;
             margin-bottom: 1rem;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #64ffda, #00bcd4);
+            border-radius: 5px;
+            transition: width 2s ease-in-out;
+            position: relative;
+        }
+        
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shine 2s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .skill-percentage {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #b0b0b0;
+            font-weight: 500;
+        }
+        
+        /* Responsive Skills */
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
         }
         
         /* Projects Grid */
@@ -915,41 +965,29 @@
             <h2>Education</h2>
             <div class="education-timeline">
                 <div class="education-items">
-
                     <div class="education-item">
-                        <div class="education-dates">2016 - 2018</div>
-                        <div class="education-degree">GCSEs</div>
-                        <div class="education-institution">Exeter School</div>
-                        <div class="education-location">Exeter, United Kingdom</div>
-                        <div class="education-description">Strong foundation in core subjects comprising of 6 A's and 3 B's with particular excellence in and Computer Science, setting the path for further education</div>
+                        <div class="education-dates">2020 - 2024</div>
+                        <div class="education-degree">BSc Software Engineering</div>
+                        <div class="education-institution">Swansea University</div>
+                        <div class="education-location">Swansea, United Kingdom</div>
+                        <div class="education-description">First-Class Honours degree with scholarship. Relevant coursework: Data Structures, Algorithms, Software Engineering, Database Systems, Web Development, AI & Machine Learning</div>
                     </div>
                     
                     <div class="education-item">
                         <div class="education-dates">2018 - 2020</div>
-                        <div class="education-degree">Diploma and Extended Diploma</div>
-                        <div class="education-institution">Truro & Penwith College</div>
-                        <div class="education-location">Truro, United Kingdom</div>
-                        <div class="education-description">Underwent a Diploma and Extended Diploma in IT & Computing, receiving a D*D*D* grade, granting a scholarship to Swansea University.</div>
+                        <div class="education-degree">A Levels</div>
+                        <div class="education-institution">Local Sixth Form College</div>
+                        <div class="education-location">Swansea, United Kingdom</div>
+                        <div class="education-description">Graduated with honors, focusing on Mathematics, Computer Science, and Physics. Achieved excellent grades preparing for university study</div>
                     </div>
                     
-                     <div class="education-item">
-                        <div class="education-dates">2022 - 2025</div>
-                        <div class="education-degree">BSc Software Engineering</div>
-                        <div class="education-institution">Swansea University</div>
-                        <div class="education-location">Swansea, United Kingdom</div>
-                        <div class="education-description">First-Class Honours degree with scholarship. Relevant coursework: Data Structures, Algorithms, Software Engineering, Database Systems, Web Development, AI & Machine Learning, Security</div>
-                    </div>
-
                     <div class="education-item">
-                        <div class="education-dates">2025 - Future Endevours</div>
-                        <div class="education-degree">Master's Degree and Employment</div>
-                        <div class="education-institution">TBD</div>
-                        <div class="education-location">TBD</div>
-                        <div class="education-description">Now actively seeking employment or a Master's degree to further my education whilst working on individual projects</div>
+                        <div class="education-dates">2016 - 2018</div>
+                        <div class="education-degree">GCSEs</div>
+                        <div class="education-institution">Local High School</div>
+                        <div class="education-location">Swansea, United Kingdom</div>
+                        <div class="education-description">Strong foundation in core subjects with particular excellence in Mathematics and Computer Science, setting the path for further education</div>
                     </div>
-
-
-             
                 </div>
             </div>
         </section>
@@ -959,20 +997,60 @@
             <h2>Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Frontend Development</h3>
-                    <p>HTML5, CSS3, JavaScript, React, Vue.js, TypeScript, Responsive Design</p>
+                    <h3>Software Development</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 92%;"></div>
+                    </div>
+                    <div class="skill-percentage">92%</div>
                 </div>
                 <div class="skill-category">
-                    <h3>Backend Development</h3>
-                    <p>Node.js, Python, Java, Express.js, Django, REST APIs, GraphQL</p>
+                    <h3>Data Structures and Algorithms</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 88%;"></div>
+                    </div>
+                    <div class="skill-percentage">88%</div>
                 </div>
                 <div class="skill-category">
-                    <h3>Database & DevOps</h3>
-                    <p>MongoDB, PostgreSQL, MySQL, Docker, AWS, Git, CI/CD</p>
+                    <h3>Critical Thinking and Problem Solving</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 95%;"></div>
+                    </div>
+                    <div class="skill-percentage">95%</div>
                 </div>
                 <div class="skill-category">
-                    <h3>Tools & Others</h3>
-                    <p>VS Code, Figma, Postman, Jest, Webpack, Agile Methodologies</p>
+                    <h3>Version Control</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%;"></div>
+                    </div>
+                    <div class="skill-percentage">85%</div>
+                </div>
+                <div class="skill-category">
+                    <h3>Database Management</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 78%;"></div>
+                    </div>
+                    <div class="skill-percentage">78%</div>
+                </div>
+                <div class="skill-category">
+                    <h3>Machine Learning</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 72%;"></div>
+                    </div>
+                    <div class="skill-percentage">72%</div>
+                </div>
+                <div class="skill-category">
+                    <h3>Communication and Collaboration</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%;"></div>
+                    </div>
+                    <div class="skill-percentage">90%</div>
+                </div>
+                <div class="skill-category">
+                    <h3>Secure Coding</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 82%;"></div>
+                    </div>
+                    <div class="skill-percentage">82%</div>
                 </div>
             </div>
         </section>
@@ -1036,24 +1114,46 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Software Developer Intern</h3>
-                    <p><strong>Tech Company Inc.</strong> | June 2023 - August 2023</p>
-                    <p>Developed and maintained web applications using React and Node.js. Collaborated with senior developers on feature implementation and bug fixes.</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Freelance Web Developer</h3>
-                    <p><strong>Self-Employed</strong> | January 2022 - Present</p>
-                    <p>Created custom websites and web applications for various clients. Specialized in responsive design and modern JavaScript frameworks.</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Teaching Assistant</h3>
-                    <p><strong>University Name</strong> | September 2022 - December 2022</p>
-                    <p>Assisted professor in teaching Introduction to Programming course. Conducted lab sessions and helped students with coding assignments.</p>
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div class="education-timeline">
+                <div class="education-items">
+
+                    <div class="education-item">
+                        <div class="education-dates">2016 - 2018</div>
+                        <div class="education-degree">GCSEs</div>
+                        <div class="education-institution">Exeter School</div>
+                        <div class="education-location">Exeter, United Kingdom</div>
+                        <div class="education-description">Strong foundation in core subjects comprising of 6 A's and 3 B's with particular excellence in and Computer Science, setting the path for further education</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="education-dates">2018 - 2020</div>
+                        <div class="education-degree">Diploma and Extended Diploma</div>
+                        <div class="education-institution">Truro & Penwith College</div>
+                        <div class="education-location">Truro, United Kingdom</div>
+                        <div class="education-description">Underwent a Diploma and Extended Diploma in IT & Computing, receiving a D*D*D* grade, granting a scholarship to Swansea University.</div>
+                    </div>
+                    
+                     <div class="education-item">
+                        <div class="education-dates">2022 - 2025</div>
+                        <div class="education-degree">BSc Software Engineering</div>
+                        <div class="education-institution">Swansea University</div>
+                        <div class="education-location">Swansea, United Kingdom</div>
+                        <div class="education-description">First-Class Honours degree with scholarship. Relevant coursework: Data Structures, Algorithms, Software Engineering, Database Systems, Web Development, AI & Machine Learning, Security</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-dates">2025 - Future Endevours</div>
+                        <div class="education-degree">Master's Degree and Employment</div>
+                        <div class="education-institution">TBD</div>
+                        <div class="education-location">TBD</div>
+                        <div class="education-description">Now actively seeking employment or a Master's degree to further my education whilst working on individual projects</div>
+                    </div>
+
+
+             
                 </div>
             </div>
         </section>
