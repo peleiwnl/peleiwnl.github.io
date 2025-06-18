@@ -354,19 +354,6 @@
             font-size: 1.5rem;
         }
         
-        /* Responsive for About Section */
-        @media (max-width: 768px) {
-            .about-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .about-image {
-                width: 250px;
-                height: 320px;
-            }
-        }
-        
         /* Skills Grid */
         .skills-grid {
             display: grid;
@@ -639,6 +626,17 @@
                 background-attachment: scroll; /* Better for mobile */
             }
             
+            /* About Section Mobile */
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .about-image {
+                width: 250px;
+                height: 320px;
+            }
+            
             .timeline::before {
                 left: 20px;
             }
@@ -696,10 +694,19 @@
         <!-- About Section -->
         <section id="about" class="section">
             <h2>About Me</h2>
-            <div class="content-card">
-                <p><b>I'm a passionate software developer with expertise in modern web technologies and a strong foundation in computer science principles. I love creating efficient, scalable solutions and am always eager to learn new technologies and tackle challenging problems.</b></p>
-                <br>
-                <p>When I'm not coding, you can find me exploring new frameworks, contributing to open-source projects, or sharing knowledge with the developer community. I believe in writing clean, maintainable code and following best practices in software development.</p>
+            <div class="about-container">
+                <div class="about-text">
+                    <p><b>I'm a passionate Software Engineering scholarship graduate obtaining a First-Class Honours in my Bachelors in Software Engineering, looking to pursue a Master's degree or employment in the upcoming year.</b></p>
+                    <br>
+                    <p style="color: #b0b0b0;">I have expertise in modern web technologies and a strong foundation in computer science principles. I love creating efficient, scalable solutions and am always eager to learn new technologies and tackle challenging problems. When I'm not coding, you can find me exploring new frameworks, contributing to open-source projects, or sharing knowledge with the developer community. I believe in writing clean, maintainable code and following best practices in software development.</p>
+                </div>
+                <div class="about-image-container">
+                    <div class="about-image"></div>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/pel%C3%A9-m-105932221/" class="social-icon linkedin-icon" target="_blank" aria-label="LinkedIn Profile"></a>
+                        <a href="https://github.com/peleiwnl" class="social-icon github-icon" target="_blank" aria-label="GitHub Profile"></a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -833,117 +840,4 @@
             </div>
             <div class="content-card">
                 <h3>Google Cloud Professional Developer</h3>
-                <p><strong>Google Cloud</strong> | 2023</p>
-                <p>Credential ID: GCP-PD-789012</p>
-            </div>
-            <div class="content-card">
-                <h3>Meta Frontend Developer Professional Certificate</h3>
-                <p><strong>Meta via Coursera</strong> | 2023</p>
-                <p>Comprehensive program covering React, JavaScript, and modern frontend practices</p>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <h3>📧 Email</h3>
-                    <p>peleiwnl@gmail.com</p>
-                </div>
-                <div class="contact-item">
-                    <h3>💼 LinkedIn</h3>
-                    <p><a href="#" style="color: #64ffda;">https://www.linkedin.com/in/pel%C3%A9-m-105932221/</a></p>
-                </div>
-                <div class="contact-item">
-                    <h3>🐙 GitHub</h3>
-                    <p><a href="#" style="color: #64ffda;">github.com/peleiwnl</a></p>
-                </div>
-                <div class="contact-item">
-                    <h3>📱 Phone</h3>
-                    <p>+1 (555) 123-4567</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        // Hamburger Menu Functions
-        function toggleMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        }
-
-        function closeMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-            const navContainer = document.querySelector('.nav-container');
-            
-            if (!navContainer.contains(event.target)) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Download CV function
-        function downloadCV() {
-            // Replace with your actual CV file URL
-            const cvUrl = 'path/to/your/cv.pdf';
-            const link = document.createElement('a');
-            link.href = cvUrl;
-            link.download = 'Pele_CV.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
-        // Active navigation highlighting
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-menu a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                <p><strong>Google Cloud</strong> | 2023
