@@ -703,9 +703,13 @@
         /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(4, 200px);
+            gap: 1rem;
             margin-top: 2rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .project-card {
@@ -713,53 +717,90 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(100, 255, 218, 0.1);
-        }
-        
-        .project-image {
-            height: 200px;
-            background: linear-gradient(45deg, #64ffda, #00bcd4);
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #1a1a1a;
-            font-size: 2rem;
+            position: relative;
+            color: #e0e0e0;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 1rem;
         }
         
-        .project-content {
-            padding: 1.5rem;
-        }
-        
-        .project-content h3 {
-            color: #ffffff;
-            margin-bottom: 1rem;
-        }
-        
-        .project-links {
-            margin-top: 1rem;
-        }
-        
-        .project-links a {
-            display: inline-block;
-            margin-right: 1rem;
-            padding: 0.5rem 1rem;
+        .project-card:hover {
             background: #64ffda;
             color: #1a1a1a;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: background 0.3s ease;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(100, 255, 218, 0.3);
         }
         
-        .project-links a:hover {
-            background: #4fd3b8;
+        /* Grid positioning for merged rows in middle column */
+        .project-card:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        
+        .project-card:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1 / 3; /* Spans 2 rows */
+        }
+        
+        .project-card:nth-child(3) {
+            grid-column: 3;
+            grid-row: 1;
+        }
+        
+        .project-card:nth-child(4) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        
+        .project-card:nth-child(5) {
+            grid-column: 3;
+            grid-row: 2;
+        }
+        
+        .project-card:nth-child(6) {
+            grid-column: 1;
+            grid-row: 3;
+        }
+        
+        .project-card:nth-child(7) {
+            grid-column: 2;
+            grid-row: 3 / 5; /* Spans 2 rows */
+        }
+        
+        .project-card:nth-child(8) {
+            grid-column: 3;
+            grid-row: 3;
+        }
+        
+        .project-card:nth-child(9) {
+            grid-column: 1;
+            grid-row: 4;
+        }
+        
+        .project-card:nth-child(10) {
+            grid-column: 3;
+            grid-row: 4;
+        }
+        
+        /* Responsive design for mobile */
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(10, 150px);
+                gap: 1rem;
+            }
+            
+            .project-card:nth-child(n) {
+                grid-column: 1 !important;
+                grid-row: auto !important;
+            }
         }
         
         /* Technologies Grid */
@@ -1375,38 +1416,44 @@
         <section id="projects" class="section">
             <h2>Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">🚀</div>
-                    <div class="project-content">
-                        <h3>E-Commerce Platform</h3>
-                        <p>A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.</p>
-                        <div class="project-links">
-                            <a href="#">Live Demo</a>
-                            <a href="#">GitHub</a>
-                        </div>
-                    </div>
+                <div class="project-card" onclick="openProject('ecommerce')">
+                    E-Commerce Platform
                 </div>
-                <div class="project-card">
-                    <div class="project-image">📱</div>
-                    <div class="project-content">
-                        <h3>Task Management App</h3>
-                        <p>A responsive web application for project management with real-time collaboration features. Built using Vue.js and Firebase.</p>
-                        <div class="project-links">
-                            <a href="#">Live Demo</a>
-                            <a href="#">GitHub</a>
-                        </div>
-                    </div>
+                
+                <div class="project-card" onclick="openProject('task-manager')">
+                    Task Management App
                 </div>
-                <div class="project-card">
-                    <div class="project-image">🎵</div>
-                    <div class="project-content">
-                        <h3>Music Streaming Service</h3>
-                        <p>A Spotify-like application with playlist creation, music streaming, and social features. Developed using React and Express.js.</p>
-                        <div class="project-links">
-                            <a href="#">Live Demo</a>
-                            <a href="#">GitHub</a>
-                        </div>
-                    </div>
+                
+                <div class="project-card" onclick="openProject('music-streaming')">
+                    Music Streaming Service
+                </div>
+                
+                <div class="project-card" onclick="openProject('weather-app')">
+                    Weather Dashboard
+                </div>
+                
+                <div class="project-card" onclick="openProject('blog-platform')">
+                    Blog Platform
+                </div>
+                
+                <div class="project-card" onclick="openProject('portfolio')">
+                    Portfolio Website
+                </div>
+                
+                <div class="project-card" onclick="openProject('chat-app')">
+                    Real-time Chat App
+                </div>
+                
+                <div class="project-card" onclick="openProject('expense-tracker')">
+                    Expense Tracker
+                </div>
+                
+                <div class="project-card" onclick="openProject('game')">
+                    Browser Game
+                </div>
+                
+                <div class="project-card" onclick="openProject('api')">
+                    REST API Service
                 </div>
             </div>
         </section>
@@ -1611,6 +1658,29 @@
             });
 
         });
+
+        function openProject(projectId) {
+            // Add your project URLs or actions here
+            const projects = {
+                'ecommerce': '#',
+                'task-manager': '#',
+                'music-streaming': '#',
+                'weather-app': '#',
+                'blog-platform': '#',
+                'portfolio': '#',
+                'chat-app': '#',
+                'expense-tracker': '#',
+                'game': '#',
+                'api': '#'
+            };
+            
+            const url = projects[projectId];
+            if (url && url !== '#') {
+                window.open(url, '_blank');
+            } else {
+                alert(`${projectId.replace('-', ' ')} project will be available soon!`);
+            }
+        }
 
         // Download CV function
         function downloadCV() {
