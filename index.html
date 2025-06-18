@@ -608,8 +608,9 @@
                 left: 30px;
                 right: auto;
                 width: 3px;
-                height: auto;
+                height: 100%;
                 background: linear-gradient(to bottom, #64ffda, #00bcd4);
+                transform: none;
             }
             
             .education-items {
@@ -930,9 +931,10 @@
                 text-align: left !important;
             }
             
-            .timeline-item::before {
-                left: -70px !important;
-                transform: translateY(-50%);
+            /* Add this new rule to fix the dots */
+            .timeline-dot {
+                left: 30px !important;
+                transform: translateX(-50%) !important;
             }
         }
 
