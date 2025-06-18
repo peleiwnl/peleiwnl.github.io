@@ -845,6 +845,72 @@
                 transform: translateY(-50%);
             }
         }
+
+
+        /* Certifications Section */
+        .certifications-container {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            scroll-behavior: smooth;
+            justify-content: center;
+        }
+        
+        .certifications-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .certifications-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+        
+        .certifications-container::-webkit-scrollbar-thumb {
+            background: #64ffda;
+            border-radius: 4px;
+        }
+        
+        .certification-button {
+            background: #333333;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            width: 150px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .certification-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(100, 255, 218, 0.1);
+            border-color: #64ffda;
+        }
+        
+        .certification-button img {
+            max-width: 80px;
+            max-height: 40px;
+            object-fit: contain;
+        }
+        
+        @media (max-width: 768px) {
+            .certification-button {
+                width: 120px;
+                height: 80px;
+            }
+            
+            .certification-button img {
+                max-width: 60px;
+                max-height: 30px;
+            }
+        }
         
         /* Contact Section */
         .contact-grid {
@@ -953,73 +1019,6 @@
             
             .timeline-item::before {
                 left: -40px !important;
-            }
-
-
-          /* Certifications Section */
-            .certifications-container {
-                display: flex;
-                gap: 2rem;
-                overflow-x: auto;
-                padding: 2rem 0;
-                margin-top: 2rem;
-                scroll-behavior: smooth;
-                justify-content: center;
-            }
-            
-            .certifications-container::-webkit-scrollbar {
-                height: 8px;
-            }
-            
-            .certifications-container::-webkit-scrollbar-track {
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 4px;
-            }
-            
-            .certifications-container::-webkit-scrollbar-thumb {
-                background: #64ffda;
-                border-radius: 4px;
-            }
-            
-            .certification-button {
-                background: #333333;
-                padding: 2rem;
-                border-radius: 15px;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                transition: all 0.3s ease;
-                cursor: pointer;
-                min-width: 200px;
-                max-width: 250px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-            }
-            
-            .certification-button:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 25px rgba(100, 255, 218, 0.1);
-                border-color: #64ffda;
-            }
-            
-            .certification-button img {
-                width: 120px;
-                height: auto;
-                max-height: 60px;
-                object-fit: contain;
-            }
-            
-            @media (max-width: 768px) {
-                .certification-button {
-                    min-width: 180px;
-                    max-width: 200px;
-                }
-                
-                .certification-button img {
-                    width: 100px;
-                    max-height: 50px;
-                }
             }
             
         }
