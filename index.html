@@ -257,6 +257,116 @@
             box-shadow: 0 8px 25px rgba(100, 255, 218, 0.1);
         }
         
+        /* About Section Two-Column Layout */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            background: #333333;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .about-text:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(100, 255, 218, 0.1);
+        }
+        
+        .about-image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        
+        .about-image {
+            width: 300px;
+            height: 400px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #64ffda 0%, #00bcd4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
+            transition: all 0.3s ease;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .about-image::before {
+            content: "👨‍💻";
+            font-size: 5rem;
+            color: #1a1a1a;
+        }
+        
+        .about-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(100, 255, 218, 0.4);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(100, 255, 218, 0.1);
+            border: 2px solid #64ffda;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .social-icon:hover {
+            background: #64ffda;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.4);
+        }
+        
+        .social-icon:hover::before {
+            color: #1a1a1a;
+        }
+        
+        .linkedin-icon::before {
+            content: "💼";
+            font-size: 1.5rem;
+        }
+        
+        .github-icon::before {
+            content: "🐙";
+            font-size: 1.5rem;
+        }
+        
+        /* Responsive for About Section */
+        @media (max-width: 768px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .about-image {
+                width: 250px;
+                height: 320px;
+            }
+        }
+        
         /* Skills Grid */
         .skills-grid {
             display: grid;
@@ -587,7 +697,7 @@
         <section id="about" class="section">
             <h2>About Me</h2>
             <div class="content-card">
-                <p>I'm a passionate software developer with expertise in modern web technologies and a strong foundation in computer science principles. I love creating efficient, scalable solutions and am always eager to learn new technologies and tackle challenging problems.</p>
+                <p><b>I'm a passionate software developer with expertise in modern web technologies and a strong foundation in computer science principles. I love creating efficient, scalable solutions and am always eager to learn new technologies and tackle challenging problems.</b></p>
                 <br>
                 <p>When I'm not coding, you can find me exploring new frameworks, contributing to open-source projects, or sharing knowledge with the developer community. I believe in writing clean, maintainable code and following best practices in software development.</p>
             </div>
