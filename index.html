@@ -404,6 +404,8 @@
             position: relative;
             padding: 2rem 0;
             margin: 2rem 0;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
         }
         
         .education-timeline::before {
@@ -416,14 +418,19 @@
             background: linear-gradient(to right, #64ffda, #00bcd4);
             transform: translateY(-50%);
             z-index: 1;
+            width: 100%;
         }
         
         .education-items {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             position: relative;
             z-index: 2;
+            gap: 2rem;
+            padding: 0 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .education-item {
@@ -436,8 +443,8 @@
             text-align: center;
             position: relative;
             flex: 1;
-            margin: 0 1rem;
             max-width: 350px;
+            min-width: 280px;
         }
         
         .education-item:hover {
@@ -902,12 +909,13 @@
             <div class="education-timeline">
                 <div class="education-items">
                     <div class="education-item">
-                        <div class="education-dates">2016 - 2018</div>
-                        <div class="education-degree">GCSEs</div>
-                        <div class="education-institution">Local High School</div>
+                        <div class="education-dates">2020 - 2024</div>
+                        <div class="education-degree">BSc Software Engineering</div>
+                        <div class="education-institution">Swansea University</div>
                         <div class="education-location">Swansea, United Kingdom</div>
-                        <div class="education-description">Strong foundation in core subjects with particular excellence in Mathematics and Computer Science, setting the path for further education</div>
-                    </div>                 
+                        <div class="education-description">First-Class Honours degree with scholarship. Relevant coursework: Data Structures, Algorithms, Software Engineering, Database Systems, Web Development, AI & Machine Learning</div>
+                    </div>
+                    
                     <div class="education-item">
                         <div class="education-dates">2018 - 2020</div>
                         <div class="education-degree">A Levels</div>
@@ -915,12 +923,13 @@
                         <div class="education-location">Swansea, United Kingdom</div>
                         <div class="education-description">Graduated with honors, focusing on Mathematics, Computer Science, and Physics. Achieved excellent grades preparing for university study</div>
                     </div>
+                    
                     <div class="education-item">
-                        <div class="education-dates">2020 - 2024</div>
-                        <div class="education-degree">BSc Software Engineering</div>
-                        <div class="education-institution">Swansea University</div>
+                        <div class="education-dates">2016 - 2018</div>
+                        <div class="education-degree">GCSEs</div>
+                        <div class="education-institution">Local High School</div>
                         <div class="education-location">Swansea, United Kingdom</div>
-                        <div class="education-description">First-Class Honours degree with scholarship. Relevant coursework: Data Structures, Algorithms, Software Engineering, Database Systems, Web Development, AI & Machine Learning</div>
+                        <div class="education-description">Strong foundation in core subjects with particular excellence in Mathematics and Computer Science, setting the path for further education</div>
                     </div>
                 </div>
             </div>
