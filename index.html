@@ -1613,29 +1613,6 @@
                 timeline.appendChild(dot);
             });
 
-                if (window.innerWidth <= 768) {
-                    const educationTimeline = document.querySelector('.education-timeline');
-                    const educationItems = document.querySelectorAll('.education-item');
-                    
-                    educationItems.forEach((item, index) => {
-                        const dot = document.createElement('div');
-                        dot.className = 'education-dot';
-                        dot.style.cssText = `
-                            position: absolute;
-                            width: 20px;
-                            height: 20px;
-                            background: #64ffda;
-                            border-radius: 50%;
-                            left: 30px;
-                            top: ${item.offsetTop + item.offsetHeight/2}px;
-                            transform: translateX(-50%);
-                            box-shadow: 0 0 0 4px #1a1a1a, 0 0 15px rgba(100, 255, 218, 0.5);
-                            z-index: 10;
-                        `;
-                        educationTimeline.appendChild(dot);
-                    });
-                }
-            });
         });
 
         // Download CV function
