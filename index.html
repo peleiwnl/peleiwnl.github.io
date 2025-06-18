@@ -273,11 +273,57 @@
             transition: transform 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
             height: fit-content;
+            display: flex;
+            flex-direction: column;
         }
         
         .about-text:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(100, 255, 218, 0.1);
+        }
+        
+        .about-text-content {
+            flex: 1;
+        }
+        
+        .about-email {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .email-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(100, 255, 218, 0.1);
+            border: 2px solid #64ffda;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #64ffda;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .email-link:hover {
+            background: #64ffda;
+            color: #1a1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.4);
+        }
+        
+        .email-link svg {
+            width: 20px;
+            height: 20px;
+            fill: #64ffda;
+            transition: fill 0.3s ease;
+        }
+        
+        .email-link:hover svg {
+            fill: #1a1a1a;
         }
         
         .about-image-container {
@@ -695,9 +741,19 @@
             <h2>About Me</h2>
             <div class="about-container">
                 <div class="about-text">
-                    <p><b>I'm a passionate Software Engineering scholarship graduate obtaining a First-Class Honours in my Bachelors in Software Engineering, looking to pursue a Master's degree or employment in the upcoming year.</b></p>
-                    <br>
-                    <p style="color: #b0b0b0;">I have expertise in modern web technologies and a strong foundation in computer science principles. I love creating efficient, scalable solutions and am always eager to learn new technologies and tackle challenging problems. When I'm not coding, you can find me exploring new frameworks, contributing to open-source projects, or sharing knowledge with the developer community. I believe in writing clean, maintainable code and following best practices in software development.</p>
+                    <div class="about-text-content">
+                        <p><b>I'm a passionate Software Engineering scholarship graduate obtaining a First-Class Honours in my Bachelors in Software Engineering, looking to pursue a Master's degree or employment in the upcoming year.</b></p>
+                        <br>
+                        <p style="color: #b0b0b0;">I have expertise in modern web technologies and a strong foundation in computer science principles. I love creating efficient, scalable solutions and am always eager to learn new technologies and tackle challenging problems. When I'm not coding, you can find me exploring new frameworks, contributing to open-source projects, or sharing knowledge with the developer community. I believe in writing clean, maintainable code and following best practices in software development.</p>
+                    </div>
+                    <div class="about-email">
+                        <a href="mailto:peleiwnl@gmail.com" class="email-link">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.744L12 10.486l9.62-6.665h.744A1.636 1.636 0 0 1 24 5.457Z"/>
+                            </svg>
+                            peleiwnl@gmail.com
+                        </a>
+                    </div>
                 </div>
                 <div class="about-image-container">
                     <div class="about-image"></div>
