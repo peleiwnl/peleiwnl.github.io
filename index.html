@@ -920,107 +920,144 @@
             margin-top: 2rem;
         }
         
-        .contact-item {
-            background: #333333;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            transition: transform 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        /* Contact Form Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            margin-top: 2rem;
+            align-items: start;
         }
         
-        .contact-item:hover {
+        .contact-form-container {
+            background: #333333;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-form-container:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(100, 255, 218, 0.1);
         }
         
-        .contact-item h3 {
-            color: #64ffda;
-            margin-bottom: 1rem;
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
         }
         
-        /* Responsive Design */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #64ffda;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #e0e0e0;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #64ffda;
+            background: rgba(100, 255, 218, 0.1);
+            box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.2);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-button {
+            background: linear-gradient(45deg, #64ffda, #00bcd4);
+            color: #1a1a1a;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(100, 255, 218, 0.4);
+        }
+        
+        .contact-info {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .contact-name {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #64ffda;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact-details {
+            margin-top: 2rem;
+        }
+        
+        .contact-details p {
+            margin: 1rem 0;
+            color: #e0e0e0;
+            font-size: 1rem;
+        }
+        
+        .contact-details a {
+            color: #64ffda;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-details a:hover {
+            color: #ffffff;
+        }
+        
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-            
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background: rgba(26, 26, 26, 0.98);
-                backdrop-filter: blur(20px);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-                padding: 2rem 0;
-                gap: 0;
-                border-top: 1px solid rgba(100, 255, 218, 0.3);
-            }
-            
-            .nav-menu.active {
-                left: 0;
-            }
-            
-            .nav-menu li {
-                margin: 1rem 0;
-            }
-            
-            .nav-menu a {
-                font-size: 1.2rem;
-                padding: 1rem;
-                display: block;
-                border-radius: 10px;
-                margin: 0 2rem;
-                transition: all 0.3s ease;
-            }
-            
-            .nav-menu a:hover {
-                background: rgba(100, 255, 218, 0.1);
-                transform: translateX(10px);
-            }
-            
-            .nav-menu a:after {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero {
-                background-attachment: scroll; /* Better for mobile */
-            }
-            
-            /* About Section Mobile */
-            .about-container {
+            .contact-container {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
             
-            .about-image {
-                width: 250px;
-                height: 320px;
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
             }
             
-            .timeline::before {
-                left: 20px;
+            .contact-name {
+                font-size: 2.5rem;
             }
-            
-            .timeline-item {
-                width: calc(100% - 60px);
-                margin-left: 60px !important;
-                margin-right: 0 !important;
-            }
-            
-            .timeline-item::before {
-                left: -40px !important;
-            }
-            
         }
         
         /* Smooth scrolling */
@@ -1318,22 +1355,48 @@
         <!-- Contact Section -->
         <section id="contact" class="section">
             <h2>Contact</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <h3>📧 Email</h3>
-                    <p>peleiwnl@gmail.com</p>
+            <div class="contact-container">
+                <!-- Left Column - Contact Form -->
+                <div class="contact-form-container">
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <!-- Row 1: Name and Email -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Row 2: Subject -->
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <!-- Row 3: Message -->
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
                 </div>
-                <div class="contact-item">
-                    <h3>💼 LinkedIn</h3>
-                    <p><a href="https://www.linkedin.com/in/pel%C3%A9-m-105932221/" style="color: #64ffda;">LinkedIn Profile</a></p>
-                </div>
-                <div class="contact-item">
-                    <h3>🐙 GitHub</h3>
-                    <p><a href="https://github.com/peleiwnl" style="color: #64ffda;">GitHub Profile</a></p>
-                </div>
-                <div class="contact-item">
-                    <h3>📱 Phone</h3>
-                    <p>+1 (555) 123-4567</p>
+                
+                <!-- Right Column - Name Display -->
+                <div class="contact-info">
+                    <h1 class="contact-name">Pele</h1>
+                    <div class="contact-details">
+                        <p>📧 peleiwnl@gmail.com</p>
+                        <p>💼 <a href="https://www.linkedin.com/in/pel%C3%A9-m-105932221/" target="_blank">LinkedIn Profile</a></p>
+                        <p>🐙 <a href="https://github.com/peleiwnl" target="_blank">GitHub Profile</a></p>
+                        <p>📱 +1 (555) 123-4567</p>
+                    </div>
                 </div>
             </div>
         </section>
