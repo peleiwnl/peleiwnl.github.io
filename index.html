@@ -92,17 +92,46 @@
             margin: 0 auto;
         }
         
-        /* Hero Section */
+        /* Hero Section with Background Image */
         .hero {
             text-align: center;
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            /* Background image with overlay */
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: white;
-            min-height: 70vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            position: relative;
+        }
+        
+        /* Alternative: Animated gradient overlay */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(100, 255, 218, 0.1), rgba(0, 188, 212, 0.1));
+            animation: pulse 4s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.6; }
+        }
+        
+        .hero > * {
+            position: relative;
+            z-index: 2;
         }
         
         .hero-image {
@@ -116,6 +145,8 @@
             margin-bottom: 2rem;
             box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
             animation: float 3s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255, 255, 255, 0.2);
         }
         
         @keyframes float {
@@ -132,12 +163,14 @@
             font-size: 3.5rem;
             margin-bottom: 1rem;
             font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         
         .cv-button {
@@ -150,6 +183,8 @@
             font-weight: bold;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
         
         .cv-button:hover {
@@ -417,6 +452,10 @@
             
             .hero h1 {
                 font-size: 2.5rem;
+            }
+            
+            .hero {
+                background-attachment: scroll; /* Better for mobile */
             }
             
             .timeline::before {
