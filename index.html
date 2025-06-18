@@ -681,36 +681,71 @@
             background: #4fd3b8;
         }
         
-        /* Technologies */
+        /* Technologies Grid */
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            border-collapse: collapse;
             margin-top: 2rem;
+            background: #333333;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
         
         .tech-item {
             background: #333333;
-            padding: 1.5rem;
-            border-radius: 10px;
+            padding: 2rem 1rem;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
             color: #e0e0e0;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px;
+        }
+        
+        .tech-item:nth-child(4n) {
+            border-right: none;
+        }
+        
+        .tech-item:nth-child(n+9) {
+            border-bottom: none;
         }
         
         .tech-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
-            border-color: #64ffda;
+            background: #64ffda;
+            color: #1a1a1a;
+            transform: scale(1.02);
+            z-index: 2;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
         }
         
-        .tech-item::before {
-            content: "⚡";
-            display: block;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+        /* Responsive Technologies */
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+            }
+            
+            .tech-item:nth-child(2n) {
+                border-right: none;
+            }
+            
+            .tech-item:nth-child(4n) {
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .tech-item:nth-child(n+11) {
+                border-bottom: none;
+            }
         }
         
         /* Experience Timeline */
@@ -1114,20 +1149,20 @@
 
         <!-- Technologies Section -->
         <section id="technologies" class="section">
-            <h2>Technologies</h2>
+            <h2>Languages & Frameworks</h2>
             <div class="tech-grid">
-                <div class="tech-item">JavaScript</div>
-                <div class="tech-item">React</div>
-                <div class="tech-item">Node.js</div>
+                <div class="tech-item">Java</div>
                 <div class="tech-item">Python</div>
-                <div class="tech-item">MongoDB</div>
-                <div class="tech-item">PostgreSQL</div>
-                <div class="tech-item">Docker</div>
-                <div class="tech-item">AWS</div>
+                <div class="tech-item">C++</div>
+                <div class="tech-item">Node.js</div>
+                <div class="tech-item">MySQL</div>
+                <div class="tech-item">Firebase</div>
                 <div class="tech-item">Git</div>
-                <div class="tech-item">TypeScript</div>
-                <div class="tech-item">Vue.js</div>
-                <div class="tech-item">Express.js</div>
+                <div class="tech-item">Docker</div>
+                <div class="tech-item">Android Studio</div>
+                <div class="tech-item">Lua</div>
+                <div class="tech-item">Haskell</div>
+                <div class="tech-item">PHP</div>
             </div>
         </section>
 
