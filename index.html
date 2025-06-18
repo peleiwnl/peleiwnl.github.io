@@ -117,6 +117,42 @@
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(6px, -6px);
         }
+
+        /* MOBILE RESPONSIVE NAVIGATION - THIS WAS MISSING! */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: rgba(26, 26, 26, 0.98);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                backdrop-filter: blur(10px);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 2rem 0;
+                gap: 1rem;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+            
+            .nav-menu a {
+                font-size: 1.2rem;
+                padding: 1rem;
+                display: block;
+            }
+        }
         
         /* Main Content */
         .main-content {
@@ -227,6 +263,30 @@
         .cv-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(100, 255, 218, 0.4);
+        }
+
+        /* Mobile responsive for hero */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .hero-image::before {
+                font-size: 3rem;
+            }
         }
         
         /* Section Styles */
@@ -405,6 +465,23 @@
         .social-icon:hover svg {
             fill: #1a1a1a;
         }
+
+        /* Mobile responsive for about section */
+        @media (max-width: 768px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .about-image {
+                width: 250px;
+                height: 300px;
+            }
+            
+            .about-image::before {
+                font-size: 4rem;
+            }
+        }
         
         /* Education Timeline */
         .education-timeline {
@@ -413,7 +490,7 @@
             margin: 2rem 0;
             width: 100vw;
             margin-left: calc(-50vw + 50%);
-            overflow: hidden; /* Hide any overflow content */
+            overflow: hidden;
         }
         
         .education-timeline::before {
@@ -436,10 +513,10 @@
             position: relative;
             z-index: 2;
             gap: 2rem;
-            padding: 0 4rem; /* Increased padding to prevent cutoff */
+            padding: 0 4rem;
             max-width: 1200px;
             margin: 0 auto;
-            min-width: 0; /* Prevent flex items from overflowing */
+            min-width: 0;
         }
         .education-item {
             background: #333333;
@@ -535,6 +612,7 @@
                 margin: 1rem 0 1rem 60px;
                 max-width: none;
                 text-align: left;
+                min-width: auto;
             }
             
             .education-item::before {
@@ -849,7 +927,6 @@
             }
         }
 
-
         /* Certifications Section */
         .certifications-container {
             display: flex;
@@ -1114,7 +1191,7 @@
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden;
         }
     </style>
 </head>
@@ -1226,8 +1303,6 @@
                         <div class="education-description">Now actively seeking employment or a Master's degree to further my education whilst working on individual projects</div>
                     </div>
 
-
-             
                 </div>
             </div>
         </section>
@@ -1402,7 +1477,6 @@
                 </div>
             </div>
         </section>
-
 
         <!-- Contact Section -->
         <section id="contact" class="section">
