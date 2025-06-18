@@ -603,14 +603,7 @@
         /* Responsive Education Timeline */
         @media (max-width: 768px) {
             .education-timeline::before {
-                top: 0;
-                bottom: 0;
-                left: 30px;
-                right: auto;
-                width: 3px;
-                height: 100%;
-                background: linear-gradient(to bottom, #64ffda, #00bcd4);
-                transform: none;
+                display: none;
             }
             
             .education-items {
@@ -626,9 +619,9 @@
             }
             
             .education-item::before {
-                left: -50px;
+                left: -40px;
                 top: 50%;
-                transform: translateX(50%) translateY(-50%);
+                transform: translateY(-50%);
             }
         }
         
@@ -1619,6 +1612,30 @@
                 `;
                 timeline.appendChild(dot);
             });
+
+                if (window.innerWidth <= 768) {
+                    const educationTimeline = document.querySelector('.education-timeline');
+                    const educationItems = document.querySelectorAll('.education-item');
+                    
+                    educationItems.forEach((item, index) => {
+                        const dot = document.createElement('div');
+                        dot.className = 'education-dot';
+                        dot.style.cssText = `
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            background: #64ffda;
+                            border-radius: 50%;
+                            left: 30px;
+                            top: ${item.offsetTop + item.offsetHeight/2}px;
+                            transform: translateX(-50%);
+                            box-shadow: 0 0 0 4px #1a1a1a, 0 0 15px rgba(100, 255, 218, 0.5);
+                            z-index: 10;
+                        `;
+                        educationTimeline.appendChild(dot);
+                    });
+                }
+            });
         });
 
         // Download CV function
@@ -1633,7 +1650,6 @@
             document.body.removeChild(link);
         }
 
-        // Add this to your script section
         function handleSubmit(event) {
             event.preventDefault();
             
