@@ -17,6 +17,7 @@
             color: #e0e0e0;
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             min-height: 100vh;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
         
         /* Navigation */
@@ -409,21 +410,20 @@
             position: relative;
             padding: 2rem 0;
             margin: 2rem 0;
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
+            /* Remove the 100vw width and negative margin */
+            overflow-x: hidden;
         }
         
         .education-timeline::before {
             content: '';
             position: absolute;
             top: 50%;
-            left: 0;
-            right: 0;
+            left: -100px; /* Extend beyond container */
+            right: -100px; /* Extend beyond container */
             height: 3px;
             background: linear-gradient(to right, #64ffda, #00bcd4);
             transform: translateY(-50%);
             z-index: 1;
-            width: 100%;
         }
         
         .education-items {
@@ -1111,6 +1111,7 @@
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
     </style>
 </head>
