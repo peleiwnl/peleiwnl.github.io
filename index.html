@@ -81,6 +81,36 @@
             width: 100%;
         }
         
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #64ffda;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        
         /* Main Content */
         .main-content {
             margin-top: 80px;
@@ -445,9 +475,50 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
             .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
                 flex-direction: column;
-                gap: 1rem;
+                background: rgba(26, 26, 26, 0.98);
+                backdrop-filter: blur(20px);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+                gap: 0;
+                border-top: 1px solid rgba(100, 255, 218, 0.3);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+            
+            .nav-menu a {
+                font-size: 1.2rem;
+                padding: 1rem;
+                display: block;
+                border-radius: 10px;
+                margin: 0 2rem;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(100, 255, 218, 0.1);
+                transform: translateX(10px);
+            }
+            
+            .nav-menu a:after {
+                display: none;
             }
             
             .hero h1 {
@@ -484,15 +555,20 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">Pele</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-menu">
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#education">EDUCATION</a></li>
-                <li><a href="#skills">SKILLS</a></li>
-                <li><a href="#projects">PROJECTS</a></li>
-                <li><a href="#technologies">TECHNOLOGIES</a></li>
-                <li><a href="#experience">EXPERIENCE</a></li>
-                <li><a href="#certifications">CERTIFICATIONS</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#about" onclick="closeMenu()">ABOUT</a></li>
+                <li><a href="#education" onclick="closeMenu()">EDUCATION</a></li>
+                <li><a href="#skills" onclick="closeMenu()">SKILLS</a></li>
+                <li><a href="#projects" onclick="closeMenu()">PROJECTS</a></li>
+                <li><a href="#technologies" onclick="closeMenu()">TECHNOLOGIES</a></li>
+                <li><a href="#experience" onclick="closeMenu()">EXPERIENCE</a></li>
+                <li><a href="#certifications" onclick="closeMenu()">CERTIFICATIONS</a></li>
+                <li><a href="#contact" onclick="closeMenu()">CONTACT</a></li>
             </ul>
         </div>
     </nav>
@@ -511,10 +587,10 @@
         <section id="about" class="section">
             <h2>About Me</h2>
             <div class="content-card">
-                <p><b>I'm a Software Engineering scholarship graduate obtaining a First-Class Honours in my Bachelors in Software Engineering, looking to pursue a Master's degree or employment in the upcoming year. </b></p>
-                <p> a passionate software developer with expertise in modern web technologies and a strong foundation in computer science principles. I love creating efficient, scalable solutions and am always eager to learn new technologies and tackle challenging problems.</p>
+                <p><b>I'm a passionate Software Engineering scholarship graduate obtaining a First-Class Honours in my Bachelors in Software Engineering, looking to pursue a Master's degree or employment in the upcoming year. </b></p>
                 <br>
-                <p>When I'm not coding, you can find me exploring new frameworks, contributing to open-source projects, or sharing knowledge with the developer community. I believe in writing clean, maintainable code and following best practices in software development.</p>
+                <p> I have expertise in modern web technologies and a strong foundation in computer science principles. I love creating efficient, scalable solutions and am always eager to learn new technologies and tackle challenging problems.
+                    When I'm not coding, you can find me exploring new frameworks, contributing to open-source projects, or sharing knowledge with the developer community. I believe in writing clean, maintainable code and following best practices in software development.</p>
             </div>
         </section>
 
@@ -683,6 +759,35 @@
     </main>
 
     <script>
+        // Hamburger Menu Functions
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const navContainer = document.querySelector('.nav-container');
+            
+            if (!navContainer.contains(event.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
