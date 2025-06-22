@@ -128,7 +128,6 @@
             transform: rotate(-45deg) translate(6px, -6px);
         }
 
-        /* MOBILE RESPONSIVE NAVIGATION - THIS WAS MISSING! */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -147,6 +146,10 @@
                 border-top: 1px solid rgba(255, 255, 255, 0.1);
                 padding: 2rem 0;
                 gap: 1rem;
+                /* Add these lines to fix scrolling */
+                height: calc(100vh - 70px);
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
             }
             
             .nav-menu.active {
