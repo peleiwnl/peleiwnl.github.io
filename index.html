@@ -1611,7 +1611,6 @@
     </main>
 
     <script>
-        // Hamburger Menu Functions
         function toggleMenu() {
             const hamburger = document.querySelector('.hamburger');
             const navMenu = document.querySelector('.nav-menu');
@@ -1628,7 +1627,6 @@
             navMenu.classList.remove('active');
         }
 
-        // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             const hamburger = document.querySelector('.hamburger');
             const navMenu = document.querySelector('.nav-menu');
@@ -1640,7 +1638,6 @@
             }
         });
 
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1679,9 +1676,8 @@
         });
 
         function openProject(projectId) {
-            // Add your project URLs or actions here
             const projects = {
-                'chat-app': '#', // Coming soon
+                'chat-app': '#', 
                 'blog-app': 'https://github.com/peleiwnl/Bloggit',
                 'rest-api-service': 'https://github.com/peleiwnl/REST-API-Service',
                 'expense-tracker': 'https://github.com/peleiwnl/Expense-Tracking',
@@ -1720,17 +1716,13 @@
             const subject = formData.get('subject');
             const message = formData.get('message');
             
-            // Create mailto link
             const mailtoLink = `mailto:peleiwnl@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-            
-            // Open default email client
+  
             window.location.href = mailtoLink;
             
-            // Optional: Show success message
             alert('Opening your email client...');
         }
 
-        // Active navigation highlighting
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-menu a');
@@ -1759,7 +1751,6 @@
             });
         });
 
-        // Trigger scroll event on page load
         window.addEventListener('load', () => {
             window.dispatchEvent(new Event('scroll'));
         });
